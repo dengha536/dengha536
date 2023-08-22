@@ -1,0 +1,21 @@
+    QTextStream inf(&file);
+	QString line = inf.readLine();
+	int length = 0;
+	while (!line.isNull())
+	{
+
+		if (line != tr(""))
+		{
+			this->append(line);
+			length++;
+		}
+        line = inf.readLine();
+	}
+ 
+
+	this->history_length = length;
+ 
+	if (!this->history_length)
+	{
+		this->append(tr("null"));
+	}
